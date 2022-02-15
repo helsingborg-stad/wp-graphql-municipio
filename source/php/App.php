@@ -25,7 +25,6 @@ class App
             $args['graphql_plural_name'] = $taxonomy . 's';
         }
 
-
         return $args;
     }
 
@@ -37,7 +36,6 @@ class App
             $args['graphql_single_name'] = strtolower($args['labels']['singular_name']);
             $args['graphql_plural_name'] = strtolower($args['labels']['plural_name'] ?? $args['labels']['singular_name'] . 's');
         }
-
 
         return $args;
     }
