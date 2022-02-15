@@ -1,7 +1,7 @@
 {
   "name": "wp-graphql-municipio",
   "version": "0.1.0",
-  "description": "Temporary Content Managment for Laiban Prototype App",
+  "description": " Integrates WP GraphQL with custom post types created with Municipio",
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

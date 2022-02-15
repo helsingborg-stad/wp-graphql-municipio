@@ -1,3 +1,3 @@
 # WP GraphQL Municipio
 
-Temporary Content Managment for Laiban Prototype App
+Integrates WP GraphQL with custom post types created with Municipio
