@@ -4,11 +4,11 @@ namespace WPGraphQLMunicipio;
 
 class App
 {
+    public const DYNAMIC_CPT_OPTIONS_PREFIX = 'options_avabile_dynamic_post_types_';
+    public const DYNAMIC_CPT_OPTIONS_NAME_SUFFIX = 'options_avabile_dynamic_post_types_';
+
     public function __construct()
     {
-        define('DYNAMIC_CPT_OPTIONS_PREFIX', 'options_avabile_dynamic_post_types_');
-        define('DYNAMIC_CPT_OPTIONS_NAME_SUFFIX', '_post_type_name');
-
         add_action('register_post_type_args', array($this, 'enableGraphQlForDynamicPostTypes'), 10, 2);
     }
 
@@ -32,7 +32,7 @@ class App
         $i = 0;
 
         while ($i !== -1) {
-            $foundPostType = get_option(DYNAMIC_CPT_OPTIONS_PREFIX . $i . DYNAMIC_CPT_OPTIONS_NAME_SUFFIX, false);
+            $foundPostType = get_option($DYNAMIC_CPT_OPTIONS_PREFIX . $i . $DYNAMIC_CPT_OPTIONS_NAME_SUFFIX, false);
             if ($foundPostType) {
                 $dynamicPostTypes[] = strtolower($foundPostType);
                 $i++;
