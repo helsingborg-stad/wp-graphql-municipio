@@ -18,11 +18,13 @@ class App
 
     public function enableGraphQlForDynamicTaxonomies($args, $taxonomy)
     {
-        $dynamicTaxonomies = $this->getDynamicTaxonomies();
+        $dynamicTaxonomies = apply_filters('WPGraphQLMunicipio/App/dynamicTaxonomies', $this->getDynamicTaxonomies());
+
         if (\in_array($taxonomy, $dynamicTaxonomies)) {
             $args['show_in_graphql'] = true;
             $args['graphql_single_name'] = $taxonomy;
             $args['graphql_plural_name'] = $taxonomy . 's';
+            $args = apply_filters('WPGraphQLMunicipio/App/dynamicTaxonomies/args', $args, $taxonomy);
         }
 
         return $args;
@@ -30,11 +32,13 @@ class App
 
     public function enableGraphQlForDynamicPostTypes($args, $postType)
     {
-        $dynamicPostTypes = $this->getDynamicPostTypes();
+        $dynamicPostTypes = apply_filters('WPGraphQLMunicipio/App/dynamicPostTypes', $this->getDynamicPostTypes());
+
         if (\in_array($postType, $dynamicPostTypes)) {
             $args['show_in_graphql'] = true;
             $args['graphql_single_name'] = strtolower($args['labels']['singular_name']);
             $args['graphql_plural_name'] = strtolower($args['labels']['plural_name'] ?? $args['labels']['singular_name'] . 's');
+            $args = apply_filters('WPGraphQLMunicipio/App/dynamicPostTypes/args', $args, $postType);
         }
 
         return $args;
