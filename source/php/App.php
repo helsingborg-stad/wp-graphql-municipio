@@ -5,7 +5,7 @@ namespace WPGraphQLMunicipio;
 class App
 {
     public const DYNAMIC_CPT_OPTIONS_PREFIX = 'options_avabile_dynamic_post_types_';
-    public const DYNAMIC_CPT_OPTIONS_NAME_SUFFIX = '_post_type_name';
+    public const DYNAMIC_CPT_OPTIONS_SLUG_SUFFIX = '_slug';
 
     public const DYNAMIC_TAXONOMY_OPTIONS_PREFIX = 'options_avabile_dynamic_taxonomies_';
     public const DYNAMIC_TAXONOMY_OPTIONS_SLUG_SUFFIX = '_slug';
@@ -68,7 +68,7 @@ class App
         $i = 0;
 
         while ($i !== -1) {
-            $foundPostType = get_option(self::DYNAMIC_CPT_OPTIONS_PREFIX . $i . self::DYNAMIC_CPT_OPTIONS_NAME_SUFFIX, false);
+            $foundPostType = get_option(self::DYNAMIC_CPT_OPTIONS_PREFIX . $i . self::DYNAMIC_CPT_OPTIONS_SLUG_SUFFIX, false);
             if ($foundPostType) {
                 $dynamicPostTypes[] = strtolower($foundPostType);
                 $i++;
