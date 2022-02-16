@@ -1,0 +1,16 @@
+{
+    "name": "helsingborg-stad/wp-graphql-municipio",
+    "description": "Integrates WP GraphQL with custom post types created with Municipio",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nikolas Ramstedt",
+            "email": "nikolas.ramstedt@helsingborg.se"
+        }
+    ],
+    "require": {
+      "composer/installers": "~1.0",
+      "helsingborg-stad/acf-export-manager": ">=1.0.0"
+    }
+}
